@@ -1,0 +1,63 @@
+<button (click)="addUser()" class="btn btn-success">Add Users</button>
+<button class="btn btn-success">LogOff</button> 
+
+
+
+<h1 style="background:cadetblue">This is User Page!</h1>
+<table class="table table-striped 
+            table-responsive table-hover">
+    <thead>
+        <th class="text-hide">Id</th>
+        
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Email</th>
+        <th>Action</th>
+    </thead>
+    <tbody>
+        <tr *ngFor="let user of users">
+            <td class="text-hide">{{ user.id }}</td>
+            <td>{{ user.firstName  }}</td>
+            <td>{{ user.lastName  }}</td>
+            <td>{{ user.email | titlecase }}</td>
+            <td>
+                <button class="btn btn-danger"(click)="deleteUser(user)">Delete</button>
+
+
+                <button class="btn btn-danger"(click)="editUser()">Edit</button>
+            </td>
+        </tr>
+        <tr *ngIf="!users || users.length==0">
+            <th colspan="5">
+                <p class="text-right text-danger">
+                    Sorry, No users available ..!
+                </p>
+            </th>
+        </tr>
+    </tbody>
+</table>
+<!--
+    <table border="2">
+    <thead>
+        <tr>
+            <td>ID</td>
+            <td>First Name</td>
+            <td>Last Name</td>
+            <td>Email</td>
+            
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let user of users">
+            <td>{{user.id}}</td>
+            <td>{{user.firstName}}</td>
+            <td>{{user.lastName}}</td>
+            <td>{{user.email}}</td>
+            
+            
+        </tr>
+        
+
+    </tbody>
+</table>
+-->

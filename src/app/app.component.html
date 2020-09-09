@@ -1,0 +1,28 @@
+
+
+<!--
+<h1 style="background:brown">This is a Root Component!</h1>
+<app-about></app-about>
+<app-contact></app-contact>
+<app-home></app-home>
+<app-emp></app-emp>
+-->
+<nav class="navbar navbar-default">
+<div class="container">
+    <ul class="nav navbar-nav">
+        <li><a routerLink="/">Home</a></li>
+        <li class="active"><a routerLink="/about">About Us</a></li>
+        <li><a routerLink="/contact">Contact Us</a></li>
+        <li><a routerLink="/emp">Employee</a></li>
+        <!--<li><a routerLink="/list">Employee list</a></li>-->
+        <li><a routerLink="/list">Employee List</a></li>
+        <!-- <l1><a routerLink="/reactiveform">Reactive Form</a></l1> -->
+        <li><a routerLink="/form">Reactive Form</a></li>
+        <li><a routerLink='/user'>User List</a>
+            <li><a routerLink='/binding'>Binding Demo</a></li>
+            <li><a routerLink='/ngclass'>Ngclass Demo</a></li>
+
+    </ul>
+</div>
+</nav>
+<router-outlet></router-outlet>

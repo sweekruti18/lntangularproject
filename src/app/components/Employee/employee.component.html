@@ -1,0 +1,78 @@
+<h1 style="background:seagreen">Employee Details:</h1>
+<h3>Subjects List!</h3>
+<p>Subjects:<span *ngFor="let s of Subjects">{{s+" "}}</span></p>
+<span *ngIf="ShowFaculty">{{FacultyName}}</span>
+
+<h2>Employee List using *ngFor</h2>
+<table border="1">
+    <thead>
+        <tr>
+            <td>Code</td>
+            <td>Name</td>
+            <td>Gender</td>
+            <td>Annual Salary</td>
+            <td>Date of Birth</td>
+            <td>Full Date</td>
+            <td>MM/dd//yy</td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let emp of employees">
+            <td>{{emp.code}}</td>
+            <td>{{emp.name|uppercase|gender:emp.gender}}</td>
+            <td>{{emp.gender}}</td>
+            <td>{{emp.annualSalary}}</td>
+            <td>{{emp.dateOfBirth}}</td>
+            <td>{{emp.dateOfBirth|date:fullDate}}</td>
+            <td>{{emp.dateOfBirth|date:"MM/dd/yy"}}</td>
+            
+        </tr>
+        <tr *ngIf="employees.length==0||!employees">
+            <td colspan="5">No employees to display!</td>
+
+        </tr>
+
+    </tbody>
+</table>
+<br>
+<h1>Display Data Using Interpolation From Object</h1>
+<table border="1">
+    <tr>
+        <td>ID</td>
+        <td>{{pro.id}}</td>
+    </tr>
+    <tr>
+        <td>Name</td>
+        <td>{{pro.name}}</td>
+    </tr>
+    <tr>
+        <td>Cost</td>
+        <td>{{pro.cost}}</td>
+    </tr>
+    <tr>
+        <td>Category</td>
+        <td>{{pro.category}}</td>
+    </tr>
+</table>
+
+<h1>Display Data Using Interpolation From Array Of Object</h1>
+<table border="1">
+    <thead>
+        <tr>
+        <td>Name</td>
+        <td>Cost</td>
+        <td>Category</td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let pro of products">
+            <td>{{pro.name}}</td>
+            <td>{{pro.cost}}</td>
+            <td>{{pro.category}}</td>
+        </tr>
+    </tbody>
+</table>
+
+<button class="btn btn-primary" (click)="myFunction()">Click me!</button>
+<button class="btn btn-success" (click)="deleteProduct(100)">Delete</button>
+<button class="btn btn-danger" (click)="editProduct(100,'Note1')">Edit</button>
